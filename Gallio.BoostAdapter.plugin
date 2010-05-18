@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin pluginId="Gallio.BoostAdapter"
+        recommendedInstallationPath="Boost"
+        xmlns="http://www.gallio.org/">
+  <traits>
+    <name>Boost.Test Adapter</name>
+    <version>0.0.0.0</version>
+    <description>Provides support for running Boost.Test tests.</description>
+    <icon>plugin://Gallio.BoostAdapter/Resources/boost.ico</icon>
+  </traits>
+
+  <dependencies>
+    <dependency pluginId="Gallio" />
+  </dependencies>
+
+  <files>
+    <file path="Gallio.BoostAdapter.plugin" />
+    <file path="Gallio.BoostAdapter.dll" />
+
+    <file path="x86\Debug\Gallio.BoostAdapter.Native.dll" />
+    <file path="x86\Debug\boost_unit_test_framework-vc90-mt-gd-1_42.dll" />
+
+    <file path="x86\Release\Gallio.BoostAdapter.Native.dll" />
+    <file path="x86\Release\boost_unit_test_framework-vc90-mt-1_42.dll" />
+
+    <file path="amd64\Debug\Gallio.BoostAdapter.Native.dll" />
+    <file path="amd64\Debug\boost_unit_test_framework-vc90-mt-gd-1_42.dll" />
+
+    <file path="amd64\Release\Gallio.BoostAdapter.Native.dll" />
+    <file path="amd64\Release\boost_unit_test_framework-vc90-mt-1_42.dll" />
+
+    <file path="Readme.txt" />
+    <file path="Resources\boost.ico" />
+  </files>
+
+  <assemblies>
+    <assembly fullName="Gallio.BoostAdapter, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+              codeBase="Gallio.BoostAdapter.dll"
+              qualifyPartialName="true" />
+  </assemblies>
+
+  <components>
+    <component componentId="Gallio.FileTypeRecognizers.BoostTestDll"
+               serviceId="Gallio.FileTypeRecognizer"
+               componentType="Gallio.BoostAdapter.Utils.BoostTestFileTypeRecognizer, Gallio.BoostAdapter">
+      <traits>
+        <id>BoostTestDll</id>
+        <description>A Boost.Test Dll</description>
+        <superTypeId>Executable</superTypeId>
+      </traits>
+    </component>
+
+    <component componentId="BoostAdapter.TestFramework"
+               serviceId="Gallio.TestFramework"
+               componentType="Gallio.BoostAdapter.Model.BoostTestFramework, Gallio.BoostAdapter">
+      <traits>
+        <name>Boost.Test</name>
+        <fileTypes>BoostTestDll</fileTypes>
+        <icon>plugin://Gallio.BoostAdapter/Resources/boost.ico</icon>
+      </traits>
+    </component>
+
+    <component componentId="BoostAdapter.TestKinds.BoostTestDll"
+               serviceId="Gallio.TestKind">
+      <traits>
+        <name>Boost.Test Dll</name>
+        <description>Boost.Test Dll</description>
+        <icon>plugin://Gallio.BoostAdapter/Resources/boost.ico</icon>
+      </traits>
+    </component>
+  </components>
+
+</plugin>
