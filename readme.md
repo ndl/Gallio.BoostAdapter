@@ -1,3 +1,9 @@
+                      Gallio Boost.Test Adapter
+                      =========================
+              Copyright (C) 2010 Alexander Tsvyashchenko,
+                        http://www.ndl.kiev.ua
+              Licensed under the Apache License, Version 2.0
+
 Rationale
 ---------
 
@@ -29,7 +35,7 @@ mechanism is quite extendable indeed ;-)
 Installation and usage
 ----------------------
 
-1. Either fetch [Gallio.BoostAdapter sources](http://github.com/ndl/Gallio.BoostAdapter) from github and build them (the preferred way) or download [compiled Gallio.BoostAdapter binaries](/downloads/gallio-boost-adapter-0.0.1-bin.tar.gz) (compiled against boost 1.43.0 using VS 2010, see below for pitfalls!)
+1. Either fetch [Gallio.BoostAdapter sources](http://github.com/ndl/Gallio.BoostAdapter) from github and build them (the preferred way) or download [compiled Gallio.BoostAdapter binaries](http://www.ndl.kiev.ua/downloads/Gallio.BoostAdapter-0.0.1-bin.zip) (compiled against boost 1.43.0 using VS 2010, see below for pitfalls!)
 2. Put binaries to the Gallio directory (the best is to put it into sub-directory to avoid cluttering the main Gallio directory),
 on the next run Gallio will detect Gallio.BoostAdapter and start to use it for
 DLLs in testing solution that are testable using Boost.Test.
